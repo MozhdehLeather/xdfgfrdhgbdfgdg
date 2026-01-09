@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Varsha Swayamvaram</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Pure Monochromatic Palette */
+    :root {
+      --black: #000000;
+      --gray-90: #1a1a1a;
+      --gray-80: #333333;
+      --gray-70: #4d4d4d;
+      --gray-60: #666666;
+      --gray-50: #808080;
+      --gray-40: #999999;
+      --gray-30: #b3b3b3;
+      --gray-20: #cccccc;
+      --gray-10: #e6e6e6;
+      --gray-5: #f5f5f5;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      padding: 30px 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      width: 100%;
+    }
+
+    /* Header - Pure Monochrome */
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--gray-10);
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+      color: var(--gray-90);
+    }
+
+    .header p {
+      font-size: 0.9rem;
+      color: var(--gray-60);
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      color: var(--gray-80);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gray-10);
+    }
+
+    /* Product list - Pure Black/White */
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .list-item {
+      font-size: 1rem;
+      color: var(--gray-70);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-10);
+      font-weight: 300;
+      transition: color 0.2s ease;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .list-item:active {
+      color: var(--gray-90);
+      background-color: var(--gray-5);
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Opening - Pure Monochrome */
+    .opening {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--white);
+      border-radius: 0;
+      margin: 40px 0;
+      width: 100%;
+      border: 1px solid var(--gray-10);
+    }
+
+    .opening h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--gray-90);
+    }
+
+    .opening p {
+      font-size: 1rem;
+      color: var(--gray-60);
+      font-weight: 300;
+    }
+
+    /* Parent companies - No colors */
+    .parents {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .parent {
+      background: var(--white);
+      border-radius: 0;
+      padding: 24px;
+      width: 100%;
+      border: 1px solid var(--gray-10);
+      transition: border-color 0.2s ease;
+    }
+
+    .parent:active {
+      border-color: var(--gray-30);
+    }
+
+    .parent h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--gray-90);
+    }
+
+    .parent a {
+      font-size: 0.95rem;
+      color: var(--gray-70);
+      text-decoration: none;
+      font-weight: 300;
+      display: inline-block;
+      padding: 4px 0;
+      min-height: 44px;
+      line-height: 1.4;
+      border-bottom: 1px solid var(--gray-30);
+      transition: color 0.2s ease;
+    }
+
+    .parent a:active {
+      color: var(--gray-90);
+    }
+
+    /* Decorative elements */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gray-20);
+      margin: 30px auto;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid var(--gray-10);
+      font-size: 0.85rem;
+      color: var(--gray-50);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      width: 100%;
+    }
+
+    /* Safe Area for Notch Phones */
+    @supports (padding: max(0px)) {
+      body {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
+      }
+    }
+
+    /* Tablet & Desktop - Pure Monochrome */
+    @media (min-width: 768px) {
+      body {
+        padding: 60px 30px;
+      }
+      
+      .header h1 {
+        font-size: 2.8rem;
+      }
+      
+      .header p {
+        font-size: 1rem;
+      }
+      
+      .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+      }
+      
+      .list-item {
+        border-bottom: 1px solid var(--gray-10);
+        padding: 12px 0;
+        min-height: auto;
+      }
+      
+      .list-item:hover {
+        color: var(--gray-90);
+      }
+      
+      .parents {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+      }
+      
+      .parent:hover {
+        border-color: var(--gray-30);
+      }
+      
+      .parent a:hover {
+        color: var(--gray-90);
+      }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 360px) {
+      .header h1 {
+        font-size: 1.9rem;
+      }
+      
+      .header p {
+        font-size: 0.85rem;
+      }
+      
+      .list-item {
+        font-size: 0.95rem;
+      }
+      
+      .opening {
+        padding: 30px 16px;
+      }
+    }
+
+    /* Ultra Minimalist Option (remove borders) */
+    .ultra-minimal .opening,
+    .ultra-minimal .parent,
+    .ultra-minimal .header {
+      border: none;
+    }
+    
+    .ultra-minimal .section-title {
+      border-bottom: none;
+    }
+    
+    .ultra-minimal .list-item {
+      border-bottom: none;
+      padding: 12px 0;
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Varsha Swayamvaram</h1>
+      <p>Wedding & Traditional Couture</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Collections & Services</h2>
+      <div class="list">
+        <div class="list-item">Banaras Sarees</div>
+        <div class="list-item">Kanchipuram Sarees</div>
+        <div class="list-item">Wedding Costumes</div>
+        <div class="list-item">Complementary Makeup</div>
+        <div class="list-item">Wedding Photography</div>
+        <div class="list-item">Guruvayoor Wedding Specials</div>
+        <div class="list-item">And more curated offerings</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="opening">
+      <h2>Opening Shortly</h2>
+      <p>East Guruvayoor Nada</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <h2 class="section-title">Parent Companies</h2>
+      <div class="parents">
+        <div class="parent">
+          <h3>Mozhdeh Leather</h3>
+          <a href="https://mozhdehleather.com/" target="_blank">mozhdehleather.com</a>
+        </div>
+        <div class="parent">
+          <h3>Real American Technologies</h3>
+          <a href="https://realamericantechnologies.com/" target="_blank">realamericantechnologies.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Varsha Swayamvaram
+    </footer>
+
+  </div>
+
+</body>
+</html>
