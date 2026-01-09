@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Varsha Swayamvaram - Premium Wedding & Traditional Couture in Guruvayoor">
+  <meta name="theme-color" content="#000000">
   <title>Varsha Swayamvaram</title>
 
   <!-- Font -->
@@ -43,6 +45,12 @@
       padding: 30px 16px;
       line-height: 1.6;
       overflow-x: hidden;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .container {
@@ -57,6 +65,18 @@
       margin-bottom: 60px;
       padding-bottom: 30px;
       border-bottom: 1px solid var(--gray-10);
+      animation: fadeInUp 0.6s ease 0.1s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .header h1 {
@@ -76,10 +96,27 @@
       letter-spacing: 1.5px;
     }
 
+    /* Brand Symbol */
+    .brand-symbol {
+      width: 60px;
+      height: 1px;
+      background: var(--gray-30);
+      margin: 20px auto;
+    }
+
     /* Sections */
     .section {
       margin-bottom: 60px;
       width: 100%;
+      animation: fadeInUp 0.6s ease 0.2s both;
+    }
+
+    .section:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .section:nth-child(3) {
+      animation-delay: 0.4s;
     }
 
     .section-title {
@@ -107,15 +144,36 @@
       padding: 16px 0;
       border-bottom: 1px solid var(--gray-10);
       font-weight: 300;
-      transition: color 0.2s ease;
+      transition: all 0.3s ease;
       min-height: 52px;
       display: flex;
       align-items: center;
+      cursor: pointer;
+      position: relative;
+      padding-left: 0;
+    }
+
+    .list-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background: var(--gray-30);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .list-item:hover::before {
+      opacity: 1;
     }
 
     .list-item:active {
       color: var(--gray-90);
       background-color: var(--gray-5);
+      padding-left: 8px;
     }
 
     .list-item:last-child {
@@ -131,6 +189,13 @@
       margin: 40px 0;
       width: 100%;
       border: 1px solid var(--gray-10);
+      animation: fadeInUp 0.6s ease 0.5s both;
+      transition: all 0.3s ease;
+    }
+
+    .opening:hover {
+      border-color: var(--gray-30);
+      transform: translateY(-2px);
     }
 
     .opening h2 {
@@ -160,11 +225,18 @@
       padding: 24px;
       width: 100%;
       border: 1px solid var(--gray-10);
-      transition: border-color 0.2s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .parent:hover {
+      border-color: var(--gray-30);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .parent:active {
-      border-color: var(--gray-30);
+      transform: translateY(0);
     }
 
     .parent h3 {
@@ -184,11 +256,76 @@
       min-height: 44px;
       line-height: 1.4;
       border-bottom: 1px solid var(--gray-30);
-      transition: color 0.2s ease;
+      transition: all 0.3s ease;
+      position: relative;
     }
 
-    .parent a:active {
+    .parent a::after {
+      content: '↗';
+      position: absolute;
+      right: -20px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: var(--gray-50);
+    }
+
+    .parent a:hover {
       color: var(--gray-90);
+      padding-right: 20px;
+    }
+
+    .parent a:hover::after {
+      opacity: 1;
+      right: 0;
+    }
+
+    /* Contact Button */
+    .contact-section {
+      text-align: center;
+      margin: 50px 0;
+      animation: fadeInUp 0.6s ease 0.6s both;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 14px 36px;
+      border: 1px solid var(--black);
+      color: var(--black);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      background: var(--white);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gray-5);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .contact-button:hover::before {
+      left: 0;
+    }
+
+    .contact-button:hover {
+      border-color: var(--gray-70);
+      color: var(--gray-90);
+      transform: translateY(-2px);
+    }
+
+    .contact-button:active {
+      transform: translateY(0);
     }
 
     /* Decorative elements */
@@ -197,6 +334,7 @@
       height: 1px;
       background: var(--gray-20);
       margin: 30px auto;
+      animation: fadeIn 1s ease 0.7s both;
     }
 
     /* Footer */
@@ -210,6 +348,14 @@
       font-weight: 300;
       letter-spacing: 0.5px;
       width: 100%;
+      animation: fadeInUp 0.6s ease 0.7s both;
+    }
+
+    .footer-location {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--gray-40);
+      line-height: 1.4;
     }
 
     /* Safe Area for Notch Phones */
@@ -249,6 +395,7 @@
       
       .list-item:hover {
         color: var(--gray-90);
+        padding-left: 8px;
       }
       
       .parents {
@@ -257,12 +404,13 @@
         gap: 24px;
       }
       
-      .parent:hover {
-        border-color: var(--gray-30);
+      .opening:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
       }
       
-      .parent a:hover {
-        color: var(--gray-90);
+      .contact-button {
+        padding: 16px 40px;
+        font-size: 1rem;
       }
     }
 
@@ -278,34 +426,65 @@
       
       .list-item {
         font-size: 0.95rem;
+        min-height: 48px;
       }
       
       .opening {
         padding: 30px 16px;
       }
+      
+      .contact-button {
+        padding: 12px 28px;
+        width: 100%;
+        max-width: 280px;
+      }
     }
 
-    /* Ultra Minimalist Option (remove borders) */
-    .ultra-minimal .opening,
-    .ultra-minimal .parent,
-    .ultra-minimal .header {
-      border: none;
-    }
-    
-    .ultra-minimal .section-title {
-      border-bottom: none;
-    }
-    
-    .ultra-minimal .list-item {
-      border-bottom: none;
-      padding: 12px 0;
+    /* Touch Device Optimization */
+    @media (hover: none) {
+      .list-item:active,
+      .parent:active,
+      .opening:active {
+        transform: scale(0.98);
+      }
+      
+      .contact-button:active {
+        transform: scale(0.98);
+      }
+      
+      .list-item:hover {
+        padding-left: 0;
+      }
+      
+      .list-item:hover::before {
+        opacity: 0;
+      }
     }
 
     /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
+      
+      body {
+        animation: none;
+      }
+    }
+
+    /* Loading state */
+    .loading {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -316,6 +495,7 @@
     <header class="header">
       <h1>Varsha Swayamvaram</h1>
       <p>Wedding & Traditional Couture</p>
+      <div class="brand-symbol"></div>
     </header>
 
     <section class="section">
@@ -345,20 +525,81 @@
       <div class="parents">
         <div class="parent">
           <h3>Mozhdeh Leather</h3>
-          <a href="https://mozhdehleather.com/" target="_blank">mozhdehleather.com</a>
+          <a href="https://mozhdehleather.com/" target="_blank" rel="noopener noreferrer">mozhdehleather.com</a>
         </div>
         <div class="parent">
           <h3>Real American Technologies</h3>
-          <a href="https://realamericantechnologies.com/" target="_blank">realamericantechnologies.com</a>
+          <a href="https://realamericantechnologies.com/" target="_blank" rel="noopener noreferrer">realamericantechnologies.com</a>
         </div>
       </div>
     </section>
 
+    <div class="contact-section">
+      <a href="mailto:contact@varshaswayamvaram.com" class="contact-button">
+        Contact Us
+      </a>
+    </div>
+
     <footer>
       © 2026 Varsha Swayamvaram
+      <div class="footer-location">
+        Guruvayoor, Kerala<br>
+        Traditional Indian Bridal Wear
+      </div>
     </footer>
 
   </div>
+
+  <script>
+    // Add loading class to elements for progressive enhancement
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add loaded class to body
+      document.body.classList.add('loaded');
+      
+      // Add click feedback for mobile
+      const clickableElements = document.querySelectorAll('.list-item, .parent, .contact-button');
+      
+      clickableElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+          this.classList.add('active');
+        });
+        
+        element.addEventListener('touchend', function() {
+          setTimeout(() => {
+            this.classList.remove('active');
+          }, 150);
+        });
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Add hover effect for touch devices
+      if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+      }
+    });
+    
+    // Prevent context menu on mobile for better UX
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.classList.contains('list-item') || 
+          e.target.classList.contains('parent') || 
+          e.target.classList.contains('contact-button')) {
+        e.preventDefault();
+      }
+    });
+  </script>
 
 </body>
 </html>
